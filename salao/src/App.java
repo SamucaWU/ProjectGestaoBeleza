@@ -1,13 +1,36 @@
+
 import java.util.Scanner;
 import java.util.List;
+import java.lang.ScopedValue.Carrier;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Calendar;
 
 public class App {
+   
 
-    List<Servicos> services = new ArrayList<>();
+
+
+
+
     public static void main(String[] args) throws Exception {
+
+            // List<Servicos> services = new ArrayList<>();
+
+       
+    Servicos testeServico = new Servicos(12, "Teste", 5.5);
+    Servicos testeServicoUm = new Servicos(13, "TesteDois", 10.5);
+
+
+        Carrinho.adicionarAoCarrinho(testeServico);
+        Carrinho.adicionarAoCarrinho(testeServicoUm);
+
+        Carrinho.exibirCarrinho();
+
+
+
+
+        
         
         Scanner sc = new Scanner(System.in);
         boolean change = true;
@@ -66,41 +89,45 @@ public class App {
         System.out.println("\n\n");
 
 
-        Boolean continuarComprando = true;
-
-        // Aqui é adicionado a ArrayList da classe Servicos
-        while(continuarComprando) { 
+        
+    // Aqui é adicionado a ArrayList da classe Servicos
         System.out.println("__________[Lista de Serviços]__________\n");   
-        Servicos.services();
+        // Servicos.services();
 
-        System.out.println("Digite o número do serviço que você quer: ");
-        int numeroIndice = sc.nextInt();
-
+        Boolean continuarComprando = true;
         
-            if(numeroIndice >= 1 && numeroIndice <= 37) {
-               List<Servicos> carrinho = new  ArrayList<Servicos>();
-               Servicos services = carrinho.get(numeroIndice - 1);
-               carrinho.add(services);
-
-               System.out.println(services.getProduto() + "foi adicionado ao carrinho!");
-               
-            } else {
-
-                System.out.println("Error. Try again");
-                return;
-            }
-
-            System.out.println("1. carrinho");
-
-
-
-        System.out.println("adicionar algo a mais no carrinho? s/n");
-         String simOuNao = sc.next();
-         continuarComprando = simOuNao.equalsIgnoreCase("s");
+        while(continuarComprando) { 
         
-         if(simOuNao.equals("s")) {
 
-        }
+
+        // Carrinho carrinho = new Carrinho(); TEMP
+
+        // System.out.println("Digite o número do serviço que você quer: ");
+        // int numeroIndice = sc.nextInt();
+
+        //     if(numeroIndice == -1) {
+        //         continuarComprando = false;
+        //     } else {
+        //         Servicos servicoSelecionado = Servicos.lista.get(numeroIndice);
+
+        //         if (servicoSelecionado != null){
+        //             carrinho.adicionarAoCarrinho(servicoSelecionado);
+        //         }
+        //     } 
+
+        //     carrinho.exibirCarrinho();
+
+
+        //     double total = carrinho.calcularTotal();
+        //     System.out.println("\nTotal a pagar: " + total);
+
+
+        // System.out.println("adicionar algo a mais no carrinho? s/n");
+        //  String simOuNao = sc.next();
+        //  continuarComprando = simOuNao.equalsIgnoreCase("s");
+         
+        
+
         }
 
 
@@ -140,6 +167,7 @@ public class App {
             default:
                 break;
         }
+
 
   /*       private static void gerenciarTudo() {
             System.out.println("Menu");
